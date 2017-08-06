@@ -1,71 +1,26 @@
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
   <head>
-    <title>note</title>
+    <title>Notes</title>
 
-    <link rel="stylesheet" type="text/css" href="note.css">
+    <link rel="stylesheet" type="text/css" href="page.css">
+    <script src = "note/note.js"></script>
   </head>
 
-  <body style = "background-color: #eee">
+  <body style = "background-color: #fff">
 
-    <div id = "note" style = "width: 200px; height: 300px;">
-      <div id = "note" class = "note">
-        <textarea class = "note_textarea">
-        </textarea>
-      </div>
+    <div id = "addnew" class = "addnew" onclick="addNew()">
     </div>
 
     <script>
-    var offset;
-    var m = document.getElementById('note');
-    m.style.position = "absolute";
-    m.addEventListener('mousedown', mouseDown, false);
-    window.addEventListener('mouseup', mouseUp, false);
+    var notes = [];
 
-    function move(event) {
-      event.preventDefault();
-      mousePosition = {
-              x : event.clientX,
-              y : event.clientY
-      };
-      m.style.left = (mousePosition.x + offset[0]) + 'px';
-      m.style.top  = (mousePosition.y + offset[1]) + 'px';
-    };
-
-    function mouseUp() {
-      console.log("up");
-      window.removeEventListener('mousemove', move, true);
+    function addNew()
+    {
+      notes.push(new Note("note", 200, 300));
     }
 
-    function mouseDown(e) {
-      console.log("down");
-      offset = [
-          m.offsetLeft - e.clientX,
-          m.offsetTop - e.clientY
-      ];
-      window.addEventListener('mousemove', move, true);
-    }
     </script>
 
   </body>
 </html>
-=======
-	<head>
-		<title>Initial Project Template</title>
-		<link rel="icon" href="http://cdn.ctio.co/i/logo/tab.ico">
-		<style type="text/css">
-			h1{
-				font-family: Helvetica;
-				color: #333333;
-				margin: 64px;
-			}
-		</style>
-	</head>
-	<body>
-		
-		<h1>hello, world</h1>
-		
-	</body>
-</html>
->>>>>>> a9134d5177b0ad086e4dfa5d4c8306e45dd23046

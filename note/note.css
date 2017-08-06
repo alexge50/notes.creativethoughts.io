@@ -6,16 +6,16 @@ html, body {
 }
 
 .note {
-  height: 100%;
-  width: 100%;
-  background-color: #fff;
+  height: 300px;
+  width: 200px;
+  background-color: #eee;
   border-radius: 10px;
 }
 
 .note_textarea {
    margin: 5%;
    width: 90%;
-   height: 92.5%;
+   height: 89%;
    font-family: ComingSoon;
    font-size: 16px;
    color: #333;
