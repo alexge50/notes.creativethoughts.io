@@ -1,0 +1,30 @@
+* { padding: 0; margin: 0; }
+html, body {
+    min-height: 100% !important;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.note {
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.note_textarea {
+   margin: 5%;
+   width: 90%;
+   height: 92.5%;
+   font-family: ComingSoon;
+   font-size: 16px;
+   color: #333;
+   background-color: rgba(0, 0, 0, 0);
+   border: rgba(0, 0, 0, 0);
+   resize: none;
+}
+
+@font-face {
+    font-family: ComingSoon;
+    src: url("./fonts/ComingSoon.ttf");
+}

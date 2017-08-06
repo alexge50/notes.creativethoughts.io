@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>note</title>
+
+    <link rel="stylesheet" type="text/css" href="note.css">
+  </head>
+
+  <body style = "background-color: #eee">
+
+    <div id = "note" style = "width: 200px; height: 300px;">
+      <div id = "note" class = "note">
+        <textarea class = "note_textarea">
+        </textarea>
+      </div>
+    </div>
+
+    <script>
+    var offset;
+    var m = document.getElementById('note');
+    m.style.position = "absolute";
+    m.addEventListener('mousedown', mouseDown, false);
+    window.addEventListener('mouseup', mouseUp, false);
+
+    function move(event) {
+      event.preventDefault();
+      mousePosition = {
+              x : event.clientX,
+              y : event.clientY
+      };
+      m.style.left = (mousePosition.x + offset[0]) + 'px';
+      m.style.top  = (mousePosition.y + offset[1]) + 'px';
+    };
+
+    function mouseUp() {
+      console.log("up");
+      window.removeEventListener('mousemove', move, true);
+    }
+
+    function mouseDown(e) {
+      console.log("down");
+      offset = [
+          m.offsetLeft - e.clientX,
+          m.offsetTop - e.clientY
+      ];
+      window.addEventListener('mousemove', move, true);
+    }
+    </script>
+
+  </body>
+</html>
