@@ -14,10 +14,12 @@
 
     <script>
     var notes = [];
+    var id = 0;
 
     function addNew()
     {
-      notes.push(new Note("note", 200, 300));
+      notes.push(new Note("note" + id, 200, 300));
+      id ++;
     }
 
     </script>

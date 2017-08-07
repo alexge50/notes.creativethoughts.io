@@ -1,4 +1,3 @@
-//<link rel="stylesheet" type="text/css" href="note.css">
 var notecss = document.createElement("link");
 notecss.rel = "stylesheet";
 notecss.type = "text/css";
@@ -18,7 +17,6 @@ function move(event) {
           x : event.clientX,
           y : event.clientY
   };
-  //beingMoved.style.position = "absolute";
   beingMoved.style.left = (mousePosition.x + offset[0]) + 'px';
   beingMoved.style.top  = (mousePosition.y + offset[1]) + 'px';
 };
@@ -34,8 +32,6 @@ function Note(name, width, height){
 
     document.body.appendChild(this.m_htmlObject);
 
-
-    //this.m_htmlObject.load("note.html");
     this.m_htmlObject.id = name;
     this.m_htmlObject.style.width = width + 'px';
     this.m_htmlObject.style.height = height + 'px';
@@ -43,8 +39,6 @@ function Note(name, width, height){
     this.m_htmlObject.style.left = "100px";
     this.m_htmlObject.style.top = "100px";
     this.m_htmlObject.style.pointerEvents = 'none';
-    //<link rel="stylesheet" type="text/css" href="page.css">
-    //this.m_htmlObject.innerHTML = '<div id = "note" style = "pointer-events: none; height: 100%; width: 100%; background-color: rgba(0, 0, 0, .8); border-radius: 10px;"> <textarea style = "pointer-events: auto; margin: 5%; width: 90%; height: 92.5%; font-family: ComingSoon; font-size: 16px; color: #333; background-color: rgba(0, 0, 0, 0); border: rgba(0, 0, 0, 0); resize: none;"> </textarea></div>';
 
     var object = this.m_htmlObject;
 
@@ -52,7 +46,7 @@ function Note(name, width, height){
     xhr.open('GET', 'note/note.html', true);
     xhr.onreadystatechange = function() {
         if (this.readyState !== 4) return;
-        if (this.status !== 200) return; // or whatever error handling you want
+        if (this.status !== 200) return;
         object.innerHTML = this.responseText;
     };
     xhr.send();
