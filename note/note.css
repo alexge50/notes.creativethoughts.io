@@ -6,8 +6,8 @@ html, body {
 }
 
 .note {
-  height: 300px;
-  width: 200px;
+  height: 100%;
+  width: 100%;
   background-color: #eee;
   border-radius: 10px;
 }
@@ -15,13 +15,29 @@ html, body {
 .note_textarea {
    margin: 5%;
    width: 90%;
-   height: 89%;
+   height: 91%;
    font-family: ComingSoon;
    font-size: 16px;
    color: #333;
    background-color: rgba(0, 0, 0, 0);
    border: rgba(0, 0, 0, 0);
    resize: none;
+}
+
+.move {
+  width: 15px;
+  height: 15px;
+  background-image: url("images/move.png");
+  background-size: 15px 15px;
+  position: relative;
+  left: 5px;
+  bottom: 12px;
+
+  opacity: 0;
+}
+
+.move:hover {
+  opacity: 1;
 }
 
 @font-face {
