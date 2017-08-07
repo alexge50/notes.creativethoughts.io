@@ -42,6 +42,7 @@ function Note(name, width, height){
     this.m_htmlObject.style.position = "absolute";
     this.m_htmlObject.style.left = "100px";
     this.m_htmlObject.style.top = "100px";
+    this.m_htmlObject.style.pointerEvents = 'none';
     //<link rel="stylesheet" type="text/css" href="page.css">
     //this.m_htmlObject.innerHTML = '<div id = "note" style = "pointer-events: none; height: 100%; width: 100%; background-color: rgba(0, 0, 0, .8); border-radius: 10px;"> <textarea style = "pointer-events: auto; margin: 5%; width: 90%; height: 92.5%; font-family: ComingSoon; font-size: 16px; color: #333; background-color: rgba(0, 0, 0, 0); border: rgba(0, 0, 0, 0); resize: none;"> </textarea></div>';
 
@@ -63,12 +64,13 @@ function Note(name, width, height){
 
 var mouseDown = function(e) {
   console.log("down");
-  if(e.target.nodeName == "TEXTAREA")
+  if(e.target.nodeName != "TEXTAREA")
+  {
     beingMoved = e.target.parentNode.parentNode;
-  else beingMoved = e.target;
-  offset = [
-      beingMoved.offsetLeft - e.clientX,
-      beingMoved.offsetTop - e.clientY
-  ];
-  window.addEventListener('mousemove', move, true);
+    offset = [
+        beingMoved.offsetLeft - e.clientX,
+        beingMoved.offsetTop - e.clientY
+    ];
+    window.addEventListener('mousemove', move, true);
+  }
 }
