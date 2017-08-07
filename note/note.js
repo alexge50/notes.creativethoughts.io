@@ -58,7 +58,7 @@ function Note(name, width, height){
 
 var mouseDown = function(e) {
   console.log("down");
-  if(e.target.nodeName != "TEXTAREA")
+  if(e.target.id == "move")
   {
     beingMoved = e.target.parentNode.parentNode;
     offset = [
